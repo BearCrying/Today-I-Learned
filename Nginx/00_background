@@ -35,7 +35,7 @@
 
 클라이언트 → 웹서버 → WAS → DB로 요청되고, DB → WAS → 웹서버 → 클라이언트로 응답된다.
 
-![image-20231003220458802](C:\Users\taege\AppData\Roaming\Typora\typora-user-images\image-20231003220458802.png)
+![image-20231003220623256](C:\Users\taege\AppData\Roaming\Typora\typora-user-images\image-20231003220623256.png)
 
 출처
 
