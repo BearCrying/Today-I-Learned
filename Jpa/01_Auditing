@@ -1,0 +1,47 @@
+# JPA Auditing
+
+* 서비스를 구상할 때, DB에 저장되는 데이터들이 언제 변경되었는지, 누가 변경했는지 남기는 경우가 많다. 
+* 이를 편하게 구현하도록, Spring Data JPA에서는 어노테이션으로 Audit(감시) 기능을 제공해준다.
+* 이는 엔티티를 영속성 컨텍스트에 저장하거나 수정하거나 하게되면 이에 대한 변경 시간을 자동으로 매핑하여 데이터베이스에 반영 되게 할 수 있다.
+* 이를 기록해야하는 데이터는 많기 때문에, BaseEntity를 만들어 놓고, 기록이 필요한 엔티티에 이를 상속받게 하여 사용한다.
+  
+  
+
+## 적용 방법
+
+### 1. @EnableJpaAuditing 추가
+
+* 해당 어노테이션을 프로젝트 내, main 메서드가 있는 어플리케이션 클래스에 추가한다.
+
+```java
+@EnableJpaAuditing
+@SpringBootApplication
+public class SecurityLoginApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SecurityLoginApplication.class, args);
+    }
+}
+
+```
+
+## 2. BaseEntity
+
+*  BaseEntity를 구현할때, 생성 및 변경일시를 관리하는 BaseTimeEntity를 구현하고
+  BaseEntity는 이를 상속받도록 구현하였는데, 두 엔티티는 다른 곳에서 인스턴스를 생성하지 못하도록 abstract 클래스로 구현하였다.
+
+```
+
+```
+
+
+
+##  @PrePersist
+
+* JPA 엔티티 라이프 싸이클의 콜백을 조종할 수 있게 하는 어노테이션
+* 비영속 상태에서 영속 상태가 되는 시점 이전에 실행된다.
+* Jpa Auditing을 통해 createdDate 혹은 modifiedDate를 사용할때 사용 할 수 있다.
+
+## @PreUpate
+
+* 영속 상태의 엔티티를 이용해 데이터 업데이트를 수행하기 이전에 실행된다.
