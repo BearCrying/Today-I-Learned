@@ -1,0 +1,516 @@
+# 1일차
+
+<aside>
+💡 1일차 학습목표
+✅ 클라우드 컴퓨팅 기술의 기본속성, 발전과정 및 최신 동향을 이해한다.
+✅ 클라우드 컴퓨팅 서비스를 구분하는 유형과 유형별 특징을 이해한다.
+✅ 클라우드 네이티브 어플리케이션의 개념과 MSA, 컨테이너, 데브옵스, CI/CD 등 주요 개념을 이해한다.
+✅ K-PaaS의 개발배경 및 아키텍처를 이해하고, 최신 버전의 특징을 이해한다.
+
+</aside>
+
+# Cloud 이해
+
+## 1. Cloud 기본속성
+
+![클라우드 컴퓨팅
+출처 : NIST](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/e8951a1c-95aa-45ea-b2df-255b8f5c9916/Untitled.png)
+
+클라우드 컴퓨팅
+출처 : NIST
+
+### 네트워크 기반의 컴퓨터 기술
+
+- 컴퓨팅 리소스를 데이터 센터에 대량으로 집적시킨 후, 개별 이용자가 요구하는 만큼 가상으로 분리하여 정보통신망을 통해 제공하는 서비스
+
+⇒ 사용량에 비례하여 비용이 청구됨
+
+### 주문형 셀프서비스
+
+- 사업자와 직접 상호작용하지 않고, 사용자의 필요에 따라 서버 시간 및 네트워크 스토리지 등 컴퓨팅 기능을 **사용자의 개별 관리화면을 통해 설정**할 수 있음
+
+### 광범위한 네트워크 접속
+
+- PC, 테블릿, 모바일 등 네트워크 사용이 가능한 **다양한 디바이스를 통해 서비스에 접속**할 수 있음
+
+### 리소스 공유
+
+- 사업자의 컴퓨팅 리소스를 **여러 사용자(Multi Tennent)의 요구에 따라 동적으로 할당 및 재할당 하는 형태로 이용 가능**
+
+### 신속한 확장성
+
+- 필요에 따라, 필요한 만큼 **스케일 업과 스케일 다운이 가능**
+
+### 측정 가능한 서비스
+
+- 사용자별 리소스 사용량에 대해 모니터링, 제어 및 확인할 수 있도록 측정 기능을 적용하여 사용자가 **이용한 만큼 요금을 부과하는 종량제 서비스**
+
+## 2. Cloud 발전과정
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/6f125501-e3f8-4f23-9638-a655e9d0dc05/Untitled.png)
+
+### Edge Computing
+
+- 데이터가 발생한 현장 혹은 근거리에서 실시간 처리하는 방식으로 데잍너 흐름 가속화를 지원하는 컴퓨팅 기술
+- IoT 사물인터넷 시대가 도래하면서 수십개의 장치가 인터넷에 연결되어 사용되기 시작
+→ 네트워크 트래픽과다 발생시 통신시간 지연이 발생하는 문제 발생
+⇒ 이 문제를 해결하기 위한 방법으로 엣지 컴퓨팅이 각광받
+
+Edge Computing이란?
+
+- 데이터가 중앙 서버에서 처리되는 것이 아닌 컴퓨팅 시스템의 맨 끝 단계인 단말 장치와 가까운 곳에서 데이터를 처리하는 기술
+- 데이터 처리와 분석을 분담하여 실시간 신호처리가 가능하다는 장점이 있음
+
+사용 되는 곳
+
+→ 드론, 자율주행자동차, AR, VR 등..
+
+## 3. Cloud 기반 주요 기업
+
+클라우드 기반 기업 랜드 스케이프 https://landscape.cncf.io/
+
+## 4. Cloud 트렌드
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/8df758c8-2cbf-41f2-9f93-db3b0288967f/Untitled.png)
+
+- 국내 클라우드 시장 규모는 세계 클라우드 시장 규모의 약 1%를 차지하고 있다.
+
+### 국내 클라우드 시장 동향
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/97c4b819-8893-4b5f-bca7-5a3f3a236dfa/Untitled.png)
+
+- 이는 기업들의 클라우드 업무량 증가와 정부의 클라우드 우선 정책이 시장을 견인한것으로 보임
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/1863d243-47f1-4bae-a147-28986b97f4d4/Untitled.png)
+
+- 최근 오픈소스 기반의 개방형 클라우드 플랫폼이 각광받고 있다.
+
+### 문제점
+
+- 이렇게 여러개의 기업들이 PaaS 시장으로 진출하다보니 특정 서비스를 이용하게되면 그 서비스만 이용할 수밖에 없는 종속성이 발생
+- SaaS들이 PaaS들에 명령어를 내려서 새로운 어플리케이션을 배포하게 되는데, 이때 SaaS의 종속성이 생기게되고 PaaS의 지원중단 또는 예기치못한 비용증가의 문제가 발생 할 수 있다.
+- 그렇다보니 오픈소스기반 PaaS가 각광받고있음
+
+### 2022년 클라우드 컴퓨팅 5대 트랜드
+
+1) 클라우드 네이티브 기술은 주목을 받는 정도가 아니라 주류가 될 것
+
+2) 로우코드와 노코드(LCNC) 사용이 증가할 것
+
+3) SASE(Secure Access Service Edge)가 눈에 띄는 성장 기회를 가질 것
+
+4) 퍼블릭 클라우드 기업에서 제공하는 하이브리드 클라우드 활용이 증가할 것
+
+5) 클라우드 환경에 대한 노력과 ESG 지속 가능성에 관한 노력이 확대될 것
+
+---
+
+# Cloud Model 및 특징 이해
+
+## 1. Cloud Model
+
+### 서비스에 따른 모델 구조
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/d183f62a-947b-4181-a30e-b3273d04b081/Untitled.png)
+
+### 클라우드 서비스 모델 별 서비스 모델 범위
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/a1d59614-a016-4038-869f-8df81bc89984/Untitled.png)
+
+### 서비스 모델 특징
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/7a2baa00-7d4d-4ef8-8b5a-62d95d5ea08b/Untitled.png)
+
+### 서비스 모델 구분 예시
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/f01c597c-a397-48b9-a1dc-f93929559874/Untitled.png)
+
+- 개인차소유 = On-premises solution
+    - 하드웨어인 자동차를 구매해야함
+    - 직접 운전해야하고
+    - 부품등 차의 구성을 원하는대로 가능
+    - 목적지와 경로를 자유롭게 정할 수 있음
+- 렌트 차 이용 = IaaS
+    - 자동차를 구입 할 필요없이 원하는 만큼 자동차를 빌려서 사용 할 수 있음
+    - 직접 운전함
+    - 목적지와 경로를 자유롭게 정할 수 있음
+    - 부품 등 차의 구성을 원하는대로  변경 불가
+- 택시 이용 = PaaS
+    - 차량 뿐만 아니라
+    - 원하는 목적지에 데려다 줌 그러나 경로설정의 자유도는 떨어
+- 버스 이용 = SaaS
+    - 타기만하면 가장 저렴한 비용으로 아무것도 할 필요 없이 목적지까지 가지만, 경로를 바꿀수없음
+
+### 배치에 따른 모델 구분
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/d334b16d-4d46-4b33-9c29-5121a7127253/Untitled.png)
+
+### Public Cloud 특징
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/b928f55b-f0f9-47c1-bf6b-705a7e055edc/Untitled.png)
+
+### Private Cloud 특징
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/e2907589-ec4e-4cb7-9ed7-b162c3bb9102/Untitled.png)
+
+### Hybrid Cloud 특징
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/00ef3c3e-9eb9-484a-a184-446b31832ed7/Untitled.png)
+
+---
+
+## 2. IaaS
+
+### IaaS란?
+
+- **Infrastructure as a Service** - 서비스형 인프라 스트럭쳐
+- 클라우드 서비스 제공자가 하드웨어, 가상 머신, 저장장치, 네트워크 등의 인프라스트럭처 자원을 가상화된 서비스로 사용자에게 제공하는 클라우드 서비스
+
+### 특징
+
+- 물리적 리소스를 가상화 하여 유연한 Infrastructure 제공
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/f0faf4ae-b983-482e-b4aa-5c3d373582f5/Untitled.png)
+
+### 가상화 유형
+
+**Hypervisor**
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/b074d45f-7b3f-4802-897f-aa9fa262f080/Untitled.png)
+
+**Container**
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/0c3fb41d-56e2-4ded-88d1-abe9b7f24b72/Untitled.png)
+
+- OS 환경 전체를 가상화함
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/763554ca-efe5-4bdf-b6cf-809063354599/Untitled.png)
+
+- 하나의 호스트 OS에서 멀티 OS 환경을 구현
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/6ff32e4d-6330-4f47-a353-46dfc9dc0c61/Untitled.png)
+
+### 장점
+
+- 가상 서버마다 OS를 선택할 수 있음
+- 가상 서버들이 완전히 분리되어있음
+
+### 단점
+
+- 가상 서버마다 OS가 필요하므로 하드웨어 리소스의 소비량이 많음
+- 가상 서버의 부팅에 시간이 걸림
+
+### 장점
+
+- 하나의 호스트 OS에서 여러 개의 OS를 동시에 이용할 수 있음
+- 다른 컨테이너로의 복제성, 이식성이 뛰어남
+
+### 단점
+
+- 운영체제의 커널을 공유하므로, 각 운영체제의 이미지는 각 운영체제에서만 실행 가능
+- 하나의 호스트 OS를 공유하기 때문에 컨테이너 하나가 사이버 공격을 받으면 다른 컨테이너가 위험에 노출될 가능성 높음
+
+### 제공 유형
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/827cd418-4bb0-40de-a590-62ad4ae69e3b/Untitled.png)
+
+---
+
+## 3. PaaS
+
+### PaaS란?
+
+- **Platform as a Service** - 서비스형 플랫폼
+- 클라우드 서비스 제공자가 프로그래밍 언어와 개발 환경을 포함한 플랫폼 기능을 제공하여 사용자가 애플리케이션을 배포, 관리, 실행 할 수 있는 클라우드 서비스
+- PaaS는 미들웨어 성격을 띄며, 컨테이너를 기반으로 SW플랫폼 서비스 제공
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/ba250d7d-f0fc-4626-8839-de2dbeff79a3/Untitled.png)
+    
+- 표준화된 HW 및SW의 설치-구성을 자동화하여 신속한 개발-테스트 가능
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/9c4d28bd-4450-4f30-ad59-cd30dc06bb72/Untitled.png)
+
+### 특징
+
+- 애플리케이션을 개발, 실행, 관리할 수 있는 **플랫폼을 제공하는 서비스**
+- **SaaS의 개념**을 **개발 플랫폼에 확장한** 방식
+- 개발을 위한 플랫폼 구축 필요 없이 **웹에서 쉽게 빌려 쓸 수 있음**
+- 개발자는 개발에만 집중, **애플리케이션이 동작하는 주변 환경은 가져다 쓰는 구조**
+- 개발에서 배포까지 라이프사이클이 짧아 **DevOps 문화를 적용하기 용이함**
+
+⇒ 어플리케이션 실행환경이나 데이터 베이스 등이 미리 구축되어 **단기간에 애플리케이션을 개발하여 서비스를 제공**할 수 있음
+
+## 4. SaaS
+
+### SaaS란?
+
+- Software as a Service - 서비스형 소프트웨어
+- 클라우드 서비스 제공자가 사용자가 필요로 하는 애플리케이션을 가상화된 서비스로 제공하는 클라우드 서비스
+
+### 특징
+
+- 환경설정을 통한 맞춤화
+    - 소스코드 레벨의 수정 없이 사용자의 요구사항을 수용 ( 사용자가 필요한 기능은 설정을 통해 지원)
+- 다중 사용자 지원
+    - 하나의 애플리케이션을 다수의 사용자가 공유하여 사용하는 다중 소유 아키텍처 지원
+- 확장성
+    - 가용성 및 성능 지원을 위해 다수의 인스턴스를 생성하고 사용자의 데이터를 분산 관리하며, 가상화-분산병렬 처리 등을 통해 확장성 있는 서비스를 제공
+
+### SaaS 성숙도 모델
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/6117a277-0f00-454b-aa22-e3d3adfdeecb/Untitled.png)
+
+- 성숙된 SaaS는 환경설정을 통한 맞춤화, 다중 사용자 지원, 확장성 조건을 충족
+
+### 주요 특징
+
+- 인터넷에만 접속하면 별**도 설치 없이 바로 사용 가능**한 애플리케이션
+- 사용한 기간만큼 비용을 지불하는 **구독형 서비스**로 비용 측면의 안정성 제공
+- 이용 규모와 기간이 고정적이지 않아 **단기간 소수 계정만으로도 사용 가능**
+- 데이터가 클라우드에 저장되어 **보안성이 높고 접근이 자유로움**
+- 업데이트와 버전업에 시간을 들일 필요 없이 **수시로 최신 버전 사용 가능**
+- 클라우드 공급자가 대신 관리하므로 **유지 관리에 소요되는 리소스와 비용이 없음9**
+
+### 종류
+
+- 오피스-ERP-CRM 등 전통적인 SW 영역에서 발전하고 있는 **기업용 기반 SaaS**
+- 제조-의류-금융 등 개별 산업의 생산성 향상과 부가가치 창출을 위한 **산업융화 특화 SaaS**
+- 문서저장-협업 등 개인의 편리한 생활을 위한 **정보생활용 SaaS**
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/744f43e5-d5f3-4f29-b10d-7607b18b8476/Untitled.png)
+
+---
+
+# Cloud Native Application
+
+## 1. Cloud Native Application
+
+### 클라우드 네이티브란?
+
+- 클라우드의 이점을 최대로 활용할 수 있도록 에플리케이션을 구축하고 실행하는 방식
+- CNCF 클라우드 네이티브 정의란?
+    - 퍼블릭, 프라이빗, 하이브리드 클라우드 환경에서 확장성 있는 어플리케이션을 만들고 운영할 수 있다.
+    - 컨테이너, 서비스 메시, 마이크로서비스, 불변의 인프라 스트럭처, 그리고 선언적 API가 전형적인 접근 방식에 해당한다.
+    - 회복성이 있고, 관리 편이성을 제공하며, 가시성을 갖는 느슨하게 결합된 시스템을 활용할 수 있다.
+    - 견고한 자동화와 함께 사용하면, 엔지니어는 최소한의 수고로 영향력이 크고 예측 가능한 변경을 할 수 있다.
+
+### 발전과정
+
+- 클라우드 네이티브는 기존 어플리케이션 개발의 한계를 극복하고 민첩성, 생산성 등 효율화를 위해 등장한 개념이다.
+- IT가 발전하면서 어플리케이션을 더 빠르고 효율적으로 배포해야하기 때문에 만들어졌다.
+- 기존의 어플리케이션의 개발방식과 배포방식은 빌드 및 배포의시간이 오래걸리고 사소한 컴포넌트 수정도 전체 어플리케이션을 재컴파일하여 배포해야하는 등 유지보수도 어려웠다.
+- 이러한 배경에서 클라우드 컴퓨팅을 통해 어플리케이션, 아키텍쳐, 인프라 및 개발 프로세스 등 전방위적 변화를 통해 비즈니스의 민첩성 및 생산성을 높일 수 있는 클라우드 네이티브 방식이 등장하였다.
+
+CNCF
+
+- 쿠버네티스를 기반으로 컨테이너 어플리케이션을 운용할 때 필요한 다양한 개발자 도구들을 공동 개발하는 리눅스 재단의 오픈소스 단체
+
+### 핵심요소
+
+- 마이크로서비스
+    - 마이크로서비스를 통한 서비스 안정성과 스케일링 용이성 개선
+- 컨테이너
+    - 컨테이너를 통한 IT 이식성과 유연성 확보
+- 데브옵스
+    - DevOps 를 통한 App 서비스 개선 속도 증가
+- CI/CD
+    - CI/CD 를 통한 개발-운영간 업무 속도의 증가
+
+클라우드 환경에 최적화 되어 서비스 되도록 개발된 어플리케이션
+
+- 최소의 상태 컴포넌트들이 격리된 상태의 마이크로 서비스로 구성되며, 각각의 서비스는 분산되고, 탄력적이며 수평적 확장성 있는 시스템으로 구성
+- 어플리케이션과 각각의 독립적인 배포단위는 클라우드 중심의 디자인 패턴들과 셀프 서비스가 가능한 탄력적인 플랫폼에서 운영되도록 설계되어 있음
+- 어플리케이션을 서로 독립적인 기능을 하는 여러 개의 서비스로 구분
+- 서비스들을 어떻게 구성, 연결, 관리 하는지가 핵심요소
+- ‘서비스’들을 묶어서 하나의 통합된 ‘비즈니스 서비스’를 할 수 있도록 하기 위한 다양한 기능과 기술 필
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/331d3e0a-ef3f-4d69-b1b7-9c48f7cf8ff0/Untitled.png)
+
+### 클라우드 네이티브 어플리케이션 개발 원칙 “12  Factores”
+
+1. 코드베이스
+    
+    ⇒버전 관리되는 하나의 코드베이스와 다양한 배포
+    
+2. 종속성
+    
+    ⇒ 명시적으로 선언되고 분리된 종속성
+    
+3. 설정
+    
+    ⇒ 환경에 저장된 설정
+    
+4. 백엔드서비스
+    
+    ⇒백엔드 서비스를 연결된 리소스로 취급
+    
+5. 빌드,릴리즈,실행
+    
+    ⇒ 철저하게 분리된 빌드와 실행단계
+    
+6. 프로세스
+⇒ 애플리케이션을 하나 혹은 여러개의 무상태 프로세스로 실행
+7. 포트 바인딩
+⇒ 포트 바인딩을 사용해서 서비스를 공개
+8. 동시성
+⇒ 프로세스 모델을 사용한 확장
+9. 폐기 기능
+⇒ 빠른 시작과 그레이스풀 셧다운을 통한 안정성 극대화
+10. 개발/프로덕션환경 일치
+⇒개발-프로덕션 환경 일치
+11. 로그
+⇒로그를 이벤트 스트림으로 취급
+12. 관리프로세스
+⇒작업을 일회성 프로세스로 실
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/68a0dfcc-4caa-4626-8aa5-460832532f10/Untitled.png)
+
+### 예시를 통한 비교
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/847dfbe8-e6db-4433-93a6-b6eeb85ec3f9/Untitled.png)
+
+### 효과
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/f6b9023d-fb3a-4f99-8e9d-b5ec69eb8ab2/Untitled.png)
+
+## 2. MicroService Architecture
+
+### MSA란?
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/111b058a-c6fc-40f7-a89f-a504287e84f0/Untitled.png)
+
+- 마이크로서비스 아키택쳐
+    - 대규모 소프트웨어 개발에 적용하기 위한것으로 단독으로 실행 가능하고 독립적으로 배치될 수 있는 작은 단위로 기능을 분해하여 서비스 하는 아키텍쳐
+    
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/3c587939-35e6-47d7-9705-d3f575cd5132/Untitled.png)
+
+### MSA 예시
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/a518b7a0-8eb5-46fa-9d5a-5f4b472c1a72/Untitled.png)
+
+### MSA 장점
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/e78db7eb-088e-423a-9ccb-4dffa96c52b1/Untitled.png)
+
+### MSA 단점
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/b1663c0a-eb77-4764-9eb3-dd3090294b38/Untitled.png)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/faebd316-c96c-4ff3-81a4-2e3f1fdd9ddf/Untitled.png)
+
+## 3. Container
+
+### 컨테이너란?
+
+- 가상화된 운영체제 위에서 애플리케이션의 독립적인 실행에 필요한 파일(소스코드, 라이브러리 등) 을 모은 패키지
+
+### 개념
+
+- App 실행을 위한 바이너리와 라이브러리 등을 패키지로 묶어 배포하는 가상화 기술
+    - Cloud Native 소프트웨어의 가장 작은 단위
+    - 하드웨어를 가상화하는 가상머신과 비교하면 컨테이너는 크기가 작고 가볍기때문에, 동일한 서버 환경에서 더 많은 어플리케이션을 구동할 수 있음
+    - Container는 서버에 바로 배포할 수 있을 뿐 아니라, 가상머신 위에 배포할 수 도 있음
+    - 컴퓨터 운영체제를 통해 관리되며 리소스 및 기능에 제약을 가지는 구동 프로세스
+
+### 특징
+
+- 실행 속도가 빠르다
+- 배포및 관리가 단순하다
+- 컨테이너 이미지를 쉽게 공유 및 사용이 가능하다
+- 가볍다
+- 자원 낭비의 부담이 적다
+- VM들이 분리 되어있어 안정성이 높
+
+## 4. DevOps
+
+### 데브옵스란?
+
+- 기존의 개발업무와 운영업무로 나누어진 두 역할 사이의 커뮤니케이션, 협업, 통합을 의미
+    - 프로세스 자동화를 목표로 개발자와 운영자가 협업하여, 짧은 주기 내 신뢰성 있는 소프트웨어 생성, 테스트, 릴리즈 할 수 있는 문화와 환경을 의미
+- 어플리케이션 개발- 운영 간의 협업 프로세스를 자동화하여 개발과 개선 속도를 빠르게 함
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a3a22ae2-0a0f-4ff5-adfa-a7e7af38826c/3b900ea4-c547-437f-8c84-64573274b8ab/Untitled.png)
+
+### 등장배경
+
+- 기존 폭포수 방식의 문제점
+    - 시스템과의 연결이 복잡해지고 기술과 요구사항이 지속적으로 변화하고 있는 시점에서 개발과 운영의 정보가 공유되지 않아 처리속도가 매우 느리고, 책임 소재도 불분명한 상황 발생
+- 두 역할 간의 커뮤니케이션, 협업, 통합을 강조하여 서로 간의 차이를 줄여주는
+    
+    ⇒ DevOps 소프트웨어 개발 방법론 대두
+    
+
+### 특징
+
+- **속도 및 신속한 제공**
+    - 작업 속도가 빨라지면서 시장 변화에 잘 적응하고 효율적으로 비즈니스 성과 창출
+    - 릴리스 빈도와 속도를 개선하여 제품을 더 빠르게 혁신하고 개선
+- **안정성**
+    - 애플리케이션 업데이트와 인프라 변경의 품질 보장, 지속적 통합 및 지속적 전달과 같은 방식을 통해 변경 사항이 제대로 안전하게 작동하는지 테스트 기능
+- **확장 및 보안**
+    - 규모에 따라 인프라와 개발 프로세스 운영, 관리 기능
+    - 자동화된 규정 준수 정책, 세분화된 제어 및 구성 관리 기술을 사용하여 보안을 그대로 유지 가능
+- **협업 강화**
+    - 개발자와 운영 부서는 긴밀하게 협력하고, 같이 책임지고, 업무절차를 공유하므로 효과적인 팀을 구축할 수 있음
+
+### DevOps 도입을 위한 필수요소
+
+### 에자일
+
+에자일 소프트웨어 개발
+
+- 신속한 반복 작업을 통해 실제 작동 가능한 SW를 개발, 지속적으로 제공하기 위한 방식
+- 계획과 문서 기반의 개발 모형이 아닌, 실질적인 코딩 기반으로 일정한 주기에 따라 프로토타입을 형성하고 필요한 요구사항을 파악하며, 수정사항을 즉시 적용하여 SW를 개발하는 적응형 개발 방법
+- 대표 프레임워크
+    - Scrum, kanban, XP(eXtreme Programming)
+
+### CI/CD
+
+지속적인 통합과 배포
+
+- 지속적 통합, 서비스 제공, 배포의 자동화를 통해 고객에게 더욱 짧은 주기로 App 서비스를 제공하는 방식
+- 소프트웨어의 질 향상 및 배포에 소요되는 시간 절
+
+## 5. CI/CD
+
+### CI/CD란?
+
+- 지속적인 통합, 서비스 제공, 배포의 자동화를 통해 더욱 짧은 주기로 고객에게 App을 제공하는 방법
+    - CI/CD 파이프라인은 새 버전의 SW를 제공하기 위해 수행해야 할 일련의 단계를 의미
+    DevOps 또는 SRE 방식을 통해 더 효과적으로 SW를 제공하는데 초점을 맞춘 방법
+    - CI/CD 파이프라인은 특히 통합 및 테스트 단계와 제공 및 배포 단계에서 모니터링 및 자동화를 도입하여 어플리케이션 개발 프로레스를 개선
+
+### CI - Continuous Integration
+
+- 어플리케이션 코드의 새로운 변경 사항이 정기적으로 빌드 및 테스트를 거쳐 공유 레포지토리에 병합되는 것을 의미
+
+### CD - Continuous Delivery or Continous Deployment
+
+- 지속적인 서비스 제공(Delivery)은 개발자들이 어플리케이션에 적용한 변경 사항이 버그 테스트를 거쳐 리포지토리에 자동 업로드 되는 것을 의미
+- 지속적인 배포(Deployment)는 개발자가 변경한 사항을 리포지토리에서 고객이 사용 가능한 프로덕션 환경까지 자동으로 릴리스되는 것을 의미
+
+### CI/CD와 DevOps 관계
+
+<aside>
+💡 DevOps는 소프트웨어 개발 효율성 향상을 목표하는 문화이자 프로세스, CI/CD는 DevOps를 실현하기 위해 필수적인 방법 요소
+
+</aside>
+
+- DevOps는 협업에서 팀 구조, 관찰, 버전 관리 등에 이르기까지 소프트웨어 개발의 라이프 사이클 저반을 포괄적으로 포함함
+- DevOps는 조직 전반에서 매우 다양하게 구현될 수 있지만, CI/CD 없이는 실현될 수 없음
+즉, CI/CD는 DevOps 문화의 필수 요소
+- CI/CD 파이프라인은 일련의 특정 단계로, DevOps 라이프사이클을 실현하는 툴, 자동화와 연결되어있음
+- CI/CD 파이프라인은 본질적으로 DevOps 문화와 더불어 빈번한 소규모 릴리스 프로세스와 연결되어 있
+
+---
+
+# K-PaaS 이해
+
+## 1. 개발 배경 및 개요
+
+## 2. 아키텍처
+
+## 3. 6.5ver 핵심기능 및 특징
+
+## 4. 개방형 클라우드 플랫폼 센터 소개
